@@ -75,10 +75,4 @@ public class LinkedList<T> implements List<T> {
 		System.out.println(current.data);
 	}
 	
-	public static void main(String[] args) {
-		LinkedList<Double> l = new LinkedList<>();
-		l.insert(6.5);
-		l.print();
-		
-	}
 }
