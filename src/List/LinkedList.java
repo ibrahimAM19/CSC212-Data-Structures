@@ -1,4 +1,7 @@
 package List;
+
+
+
 public class LinkedList<T> implements List<T> {
 	Node<T> head;
 	Node<T> current;
@@ -68,11 +71,50 @@ public class LinkedList<T> implements List<T> {
 		}
 	
 	public void print() {
+		findFirst();
 		while (!last()) {
 			System.out.println(current.data);
 			current = current.next;
 		}
 		System.out.println(current.data);
+	}
+	public void rev() {
+		Node<T> prev = null,cur  =head,next = null;
+		if ( head == null || head.next == null) {
+			return;
+		}
+		while( cur != null) {
+			next = cur.next;
+			cur.next = prev;
+			prev = cur;
+			cur = next;
+		}
+		head = prev;
+		
+	}
+public void removeBetween(T e1,T e2) {
+		
+	}
+	public static void main(String[] args) {
+		LinkedList<Double> l =new LinkedList<Double>();
+		l.insert(5.5);l.insert(2.3);l.insert(10.2);
+		l.rev();
+		l.print();
+	}
+	
+}
+class x{
+	public static <T>void circularShitfLift(List <T> l,int n){
+		for (int i =0; i< n;i++) {
+			l.findFirst();
+			T tmp = l.retrieve();
+			l.remove();
+			while( ! l.last()) {
+				l.findNext();
+			}
+		l.insert(tmp);
+		}
+		
 	}
 	
 }
